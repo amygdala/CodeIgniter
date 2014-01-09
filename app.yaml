@@ -1,0 +1,27 @@
+application: your-app-id
+version: uno
+runtime: php
+api_version: 1
+threadsafe: false
+
+handlers:
+
+- url: /application/assets
+  static_dir: application/assets
+
+# - url: /(.*\.(gif|png|jpg))
+#   static_files: /\1
+#   upload: (.*\.(gif|png|jpg))
+
+- url: /favicon.ico
+  static_files: /favicon.ico
+  upload: /favicon.ico
+
+# make the user_guide a static dir!
+# you dont need to include it in every project you make
+# - url: /user_guide
+  # static_dir: user_guide
+
+- url: /.*
+  script: mod_rewrite.php
+  # script: index.php

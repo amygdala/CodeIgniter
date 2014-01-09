@@ -38,8 +38,13 @@
 |
 */
 
-$route['default_controller'] = "welcome";
+
 $route['404_override'] = '';
+
+$route['news/create'] = 'news/create';
+$route['news/(:any)'] = 'news/view/$1';
+$route['news'] = 'news';
+$route['default_controller'] = 'welcome';
 
 
 /* End of file routes.php */

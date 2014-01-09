@@ -45,7 +45,9 @@
 | the active record class
 */
 
-$active_group = 'default';
+// $active_group = 'default';
+$active_group = ENVIRONMENT;
+
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
@@ -63,6 +65,43 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
+
+$db['development'] = array(
+	'hostname' => '127.0.0.1',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'your-database',
+	'dbdriver' => 'mysql',
+	'dbprefix' => '',
+	'pconnect' => TRUE,
+	'db_debug' => TRUE,
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'autoinit' => TRUE,
+	'stricton' => FALSE,
+);
+
+$db['production'] = array(
+	'hostname' => ':/cloudsql/your-project:your-instance',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'your-database',
+	'dbdriver' => 'mysql',
+	'dbprefix' => '',
+	'pconnect' => TRUE,
+	'db_debug' => TRUE,
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'autoinit' => TRUE,
+	'stricton' => FALSE,
+);
+
 
 
 /* End of file database.php */
